@@ -5,13 +5,15 @@
   "license": "MIT",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "nodemon -r tsconfig-paths/register src/index.ts",
+    "dev": "nodemon -r tsconfig-paths/register --exec ts-node src/index.ts",
     "build": "tsc -p ."
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/node": "^22.1.0",
+    "@types/passport": "^1.0.16",
+    "@types/passport-jwt": "^4.0.1",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
@@ -22,7 +24,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.2",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "socket.io": "^4.7.5",
     "zod": "^3.23.8"
   }
 }

@@ -5,7 +5,7 @@ export const body =
   (schema: ZodSchema) => (req: Request, res: Response, next: NextFunction) => {
     try {
       schema.parse(req.body);
-      next();
+      return next();
     } catch (error) {
       const e = error as ZodError;
       res.status(422).json({
