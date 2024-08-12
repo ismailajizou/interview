@@ -8,6 +8,8 @@ services:
       - "3000:5173"
     depends_on:
       - api
+    networks:
+      - application
 
   api:
     build:
@@ -18,13 +20,21 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    networks:
+      - application
 
   db:
     image: "mongo:latest"
     ports:
       - "27017:27017"
+    networks:
+      - application
     volumes:
       - mongodb_data:/data/db
+
+networks:
+  application:
+    driver: bridge
 
 volumes:
   mongodb_data:
